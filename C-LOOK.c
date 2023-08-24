@@ -1,5 +1,5 @@
 #include<stdio.h>
-int absoluteValue(int); // Declaring function absoluteValue
+int absoluteValue(int); 
 
 void main()
 {

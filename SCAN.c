@@ -15,9 +15,6 @@ int main()
     printf("Enter the head movement direction for high 1 and for low 0\n");
     scanf("%d",&move);
     
-    // logic for Scan disk scheduling
-    
-        /*logic for sort the request array */
     for(i=0;i<n;i++)
     {
         for(j=0;j<n-i-1;j++)
@@ -42,8 +39,7 @@ int main()
             break;
         }
     }
-   
-    // if movement is towards high value
+    
     if(move==1)
     {
         for(i=index;i<n;i++)
@@ -51,7 +47,6 @@ int main()
             TotalHeadMoment=TotalHeadMoment+abs(RQ[i]-initial);
             initial=RQ[i];
         }
-        //  last movement for max size 
         TotalHeadMoment=TotalHeadMoment+abs(size-RQ[i-1]-1);
         initial = size-1;
         for(i=index-1;i>=0;i--)
@@ -61,7 +56,7 @@ int main()
             
         }
     }
-    // if movement is towards low value
+
     else
     {
         for(i=index-1;i>=0;i--)
@@ -69,7 +64,6 @@ int main()
             TotalHeadMoment=TotalHeadMoment+abs(RQ[i]-initial);
             initial=RQ[i];
         }
-        //  last movement for min size 
         TotalHeadMoment=TotalHeadMoment+abs(RQ[i+1]-0);
         initial =0;
         for(i=index;i<n;i++)
